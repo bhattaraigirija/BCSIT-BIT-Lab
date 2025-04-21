@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment">
+
+        <LinearLayout
+            android:padding="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Welcome Header -->
+            <TextView
+                android:id="@+id/dashboard_welcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome, John 👋"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#212121"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Summary Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp"
+                android:elevation="2dp"
+                android:backgroundTint="#FFFFFF">
+
+                <TextView
+                    android:id="@+id/summary_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Summary"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#333333"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/summary_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="You have 3 new notifications and 2 pending tasks."
+                    android:textSize="14sp"
+                    android:textColor="#555555" />
+            </LinearLayout>
+
+            <!-- Dashboard Grid -->
+            <GridLayout
+                android:id="@+id/dashboard_grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:rowCount="3"
+                android:alignmentMode="alignMargins"
+                android:columnOrderPreserved="false"
+                android:layout_marginBottom="16dp"
+                android:useDefaultMargins="true">
+
+                <!-- Profile Tile -->
+                <LinearLayout
+                    android:id="@+id/profileSection"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_columnWeight="1"
+                    android:orientation="vertical"
+                    android:background="#FFFFFF"
+                    android:elevation="2dp"
+                    android:gravity="center"
+                    android:padding="16dp"
+                    android:backgroundTint="#FFFFFF">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/profile"
+                        android:contentDescription="Profile" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Profile"
+                        android:textSize="14sp"
+                        android:textColor="#212121"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+
+                <!-- Settings Tile -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_columnWeight="1"
+                    android:orientation="vertical"
+                    android:background="#FFFFFF"
+                    android:elevation="2dp"
+                    android:gravity="center"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/setting"
+                        android:contentDescription="Settings" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Settings"
+                        android:textSize="14sp"
+                        android:textColor="#212121"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+
+                <!-- Analytics Tile -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_columnWeight="1"
+                    android:orientation="vertical"
+                    android:background="#FFFFFF"
+                    android:elevation="2dp"
+                    android:gravity="center"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/analytics"
+                        android:contentDescription="Analytics" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Analytics"
+                        android:textSize="14sp"
+                        android:textColor="#212121"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+
+                <!-- Tasks Tile -->
+                <LinearLayout
+                    android:id="@+id/taskBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_columnWeight="1"
+                    android:orientation="vertical"
+                    android:background="#FFFFFF"
+                    android:elevation="2dp"
+                    android:gravity="center"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/tasks"
+                        android:contentDescription="Tasks" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tasks"
+                        android:textSize="14sp"
+                        android:textColor="#212121"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+            </GridLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="32sp"
+                android:text="Click Me"
+                android:id="@+id/btnDialoge"/>
+
+        </LinearLayout>
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:gravity="start"-->
+<!--            android:orientation="vertical">-->
+
+
+
+<!--            <Button-->
+<!--                android:id="@+id/btnClickMe"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center_horizontal"-->
+<!--                android:text="Registration Form"/>-->
+<!--        </LinearLayout>-->
+
+</FrameLayout>

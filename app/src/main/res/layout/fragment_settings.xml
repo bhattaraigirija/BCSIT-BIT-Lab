@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="35dp"
+    tools:context=".navBarItem.SettingsFragment">
+
+
+
+        <LinearLayout
+            android:padding="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/settings_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Settings"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#212121"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Section: General -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="General"
+                android:textStyle="bold"
+                android:textColor="#757575"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="4dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#DDDDDD" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:elevation="1dp">
+
+                <!-- Notifications -->
+                <TextView
+                    android:id="@+id/settings_notifications"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Notifications"
+                    android:textSize="16sp"
+                    android:padding="16dp"
+                    android:background="?android:selectableItemBackground" />
+
+                <!-- Dark Mode -->
+                <TextView
+                    android:id="@+id/settings_dark_mode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dark Mode"
+                    android:textSize="16sp"
+                    android:padding="16dp"
+                    android:background="?android:selectableItemBackground" />
+            </LinearLayout>
+
+            <!-- Section: Account -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Account"
+                android:textStyle="bold"
+                android:textColor="#757575"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="4dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#DDDDDD" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:elevation="1dp">
+
+                <!-- Privacy -->
+                <TextView
+                    android:id="@+id/settings_privacy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Privacy"
+                    android:textSize="16sp"
+                    android:padding="16dp"
+                    android:background="?android:selectableItemBackground" />
+
+                <!-- Change Password -->
+                <TextView
+                    android:id="@+id/settings_change_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Change Password"
+                    android:textSize="16sp"
+                    android:padding="16dp"
+                    android:background="?android:selectableItemBackground" />
+            </LinearLayout>
+
+            <!-- Section: About -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="About"
+                android:textStyle="bold"
+                android:textColor="#757575"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="4dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#DDDDDD" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:elevation="1dp">
+
+                <!-- App Version -->
+                <TextView
+                    android:id="@+id/settings_app_version"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="App Version 1.0.0"
+                    android:textSize="16sp"
+                    android:padding="16dp"
+                    android:background="?android:selectableItemBackground" />
+
+                <!-- Help & Feedback -->
+                <TextView
+                    android:id="@+id/settings_help"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Help  Feedback"
+                    android:textSize="16sp"
+                    android:padding="16dp"
+                    android:background="?android:selectableItemBackground" />
+            </LinearLayout>
+
+            <!-- Logout Button -->
+            <TextView
+                android:id="@+id/settings_logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Logout"
+                android:textSize="16sp"
+                android:textColor="#D32F2F"
+                android:padding="16dp"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                android:background="?android:selectableItemBackground" />
+        </LinearLayout>
+
+
+</FrameLayout>

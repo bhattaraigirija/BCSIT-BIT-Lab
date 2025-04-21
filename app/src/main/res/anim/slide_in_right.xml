@@ -1,0 +1,36 @@
+<!-- slide_in_right.xml -->
+<translate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromXDelta="100%"
+    android:toXDelta="0%"
+    android:duration="300"
+    />
+
+
+
+<!--    &lt;!&ndash; slide_out_left.xml &ndash;&gt;-->
+
+
+
+<!--    &lt;!&ndash; fade_in.xml &ndash;&gt;-->
+<!--<alpha xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--android:fromAlpha="0.0" android:toAlpha="1.0"-->
+<!--android:duration="300" />-->
+
+<!--    &lt;!&ndash; fade_out.xml &ndash;&gt;-->
+<!--<alpha xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--android:fromAlpha="1.0" android:toAlpha="0.0"-->
+<!--android:duration="300" />-->
+
+<!--    &lt;!&ndash; zoom_in.xml &ndash;&gt;-->
+<!--<scale xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--android:fromXScale="0.5" android:toXScale="1.0"-->
+<!--android:fromYScale="0.5" android:toYScale="1.0"-->
+<!--android:pivotX="50%" android:pivotY="50%"-->
+<!--android:duration="300" />-->
+
+<!--    &lt;!&ndash; zoom_out.xml &ndash;&gt;-->
+<!--<scale xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--android:fromXScale="1.0" android:toXScale="0.5"-->
+<!--android:fromYScale="1.0" android:toYScale="0.5"-->
+<!--android:pivotX="50%" android:pivotY="50%"-->
+<!--android:duration="300" />-->
