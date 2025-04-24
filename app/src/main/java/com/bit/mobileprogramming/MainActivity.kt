@@ -1,6 +1,7 @@
 package com.bit.mobileprogramming
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -14,11 +15,26 @@ import androidx.fragment.app.Fragment
 import com.bit.mobileprogramming.navBarItem.ProfileFragment
 import com.bit.mobileprogramming.navBarItem.SettingsFragment
 import com.google.android.material.navigation.NavigationView
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navigationView: NavigationView
+
+    override fun attachBaseContext(context: Context) {
+        val lang = context.getSharedPreferences("AppSettings", Context.MODE_PRIVATE)
+            .getString("app_lang", "en") ?: "en"
+
+        val locale = Locale(lang)
+        Locale.setDefault(locale)
+
+        val config = context.resources.configuration
+        config.setLocale(locale)
+        val context = context.createConfigurationContext(config)
+
+        super.attachBaseContext(context)
+    }
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {

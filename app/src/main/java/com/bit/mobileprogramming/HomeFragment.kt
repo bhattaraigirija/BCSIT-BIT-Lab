@@ -1,5 +1,6 @@
 package com.bit.mobileprogramming
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.bit.mobileprogramming.navBarItem.ProfileFragment
+import java.util.Locale
 
 class HomeFragment : Fragment() {
 
@@ -27,8 +29,11 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val btnDialoge = view.findViewById<Button>(R.id.btnDialoge)
+        val btnNepali = view.findViewById<Button>(R.id.btnNep)
+        val btnEnglish = view.findViewById<Button>(R.id.btnEng)
 
         btnDialoge.setOnClickListener{
+
             val builder = AlertDialog.Builder(requireContext())
 
             builder.setTitle("Logout")
@@ -48,6 +53,25 @@ class HomeFragment : Fragment() {
             val dialog = builder.create()
             dialog.show()
         }
+
+        btnNepali.setOnClickListener{
+            val newLang = "ne"
+            saveLanguagePreference(newLang)
+            setLocale(newLang, requireContext())
+
+            // Recreate activity to reflect the change
+            requireActivity().recreate()
+        }
+
+        btnEnglish.setOnClickListener{
+            val newLang = "en"
+            saveLanguagePreference(newLang)
+            setLocale(newLang, requireContext())
+
+            // Recreate activity to reflect the change
+            requireActivity().recreate()
+        }
+
 
         val lrTask = view.findViewById<LinearLayout>(R.id.taskBtn)
         val lrProfile= view.findViewById<LinearLayout>(R.id.profileSection)
@@ -88,4 +112,25 @@ class HomeFragment : Fragment() {
 //
 //        }
     }
+
+    fun setLocale(language: String, context: Context): Context {
+        val locale = Locale(language)
+        Locale.setDefault(locale)
+        val config = context.resources.configuration
+        config.setLocale(locale)
+        return context.createConfigurationContext(config)
+    }
+
+
+    private fun saveLanguagePreference(language: String) {
+        val sharedPref = requireActivity().getSharedPreferences("AppSettings", Context.MODE_PRIVATE)
+        sharedPref.edit().putString("app_lang", language).apply()
+    }
+
+    private fun getSavedLanguage(): String {
+        val sharedPref = requireActivity().getSharedPreferences("AppSettings", Context.MODE_PRIVATE)
+        return sharedPref.getString("app_lang", "en") ?: "en"
+    }
+
+
 }

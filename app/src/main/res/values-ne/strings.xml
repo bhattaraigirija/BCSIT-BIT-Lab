@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">मेरो एप</string>
+    <string name="greeting">नमस्ते</string>
+    <string name="navigation_drawer_open">Open drawer</string>
+    <string name="navigation_drawer_close">Close drawer</string>
+
+</resources>

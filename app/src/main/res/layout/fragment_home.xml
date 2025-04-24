@@ -16,7 +16,7 @@
                 android:id="@+id/dashboard_welcome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Welcome, John 👋"
+                android:text="@string/app_name"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:textColor="#212121"
@@ -38,7 +38,7 @@
                     android:id="@+id/summary_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Summary"
+                    android:text="@string/greeting"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="#333333"
@@ -172,13 +172,28 @@
                         android:layout_marginTop="8dp" />
                 </LinearLayout>
             </GridLayout>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:text="Dialoge"
+                android:visibility="gone"
+                android:id="@+id/btnDialoge"/>
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="32sp"
-                android:text="Click Me"
-                android:id="@+id/btnDialoge"/>
+                android:textSize="24sp"
+                android:text="Nepali"
+                android:id="@+id/btnNep"/>
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:text="English"
+                android:id="@+id/btnEng"/>
 
         </LinearLayout>
 
