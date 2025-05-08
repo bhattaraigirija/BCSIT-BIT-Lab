@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Student Management</string>
     <string name="greeting">Hello</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="msg">You have 3 new notifications and 2 pending tasks.</string>
 
     <string name="navigation_drawer_open">Open drawer</string>
     <string name="navigation_drawer_close">Close drawer</string>

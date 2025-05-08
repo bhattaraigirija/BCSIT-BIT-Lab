@@ -39,6 +39,9 @@ class FormActivity : AppCompatActivity() {
          db = MyDatabaseHelper(this)
 
          btnRegister.setOnClickListener {
+
+//               val name="Ram Limbu"
+//               val email = "ram@gmail.com"
              val name = etName.text.toString()
              val email = etEmail.text.toString()
              val genderId = radioGroupGender.checkedRadioButtonId

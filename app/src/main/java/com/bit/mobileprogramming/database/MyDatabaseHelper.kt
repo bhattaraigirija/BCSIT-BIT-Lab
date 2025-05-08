@@ -24,7 +24,8 @@ class MyDatabaseHelper(context: Context) : SQLiteOpenHelper(context, "UserDB", n
         onCreate(db)
     }
 
-    fun insertUser(name: String, email: String, gender: String, country: String, termsAccepted: Boolean): Boolean {
+    fun insertUser(name: String, email: String, gender: String,
+                   country: String, termsAccepted: Boolean): Boolean {
         val db = this.writableDatabase
         val values = ContentValues().apply {
             put("name", name)

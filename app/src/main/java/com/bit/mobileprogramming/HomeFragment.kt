@@ -75,6 +75,7 @@ class HomeFragment : Fragment() {
 
         val lrTask = view.findViewById<LinearLayout>(R.id.taskBtn)
         val lrProfile= view.findViewById<LinearLayout>(R.id.profileSection)
+        val lrProduct= view.findViewById<LinearLayout>(R.id.lrProducts)
 
         lrTask.setOnClickListener {
             val intent = Intent(requireContext(), TasksActivity::class.java)
@@ -95,12 +96,10 @@ class HomeFragment : Fragment() {
         }
 
 
-//        lrProfile.setOnClickListener{
-//            requireContext().supportFragmentManager.beginTransaction()
-//                .replace(R.id.fragment_container,ProfileFragment())
-//                .addToBackStack(null)
-//                .commit()
-//        }
+        lrProduct.setOnClickListener{
+           val intent = Intent(requireContext(), ProductsActivity::class.java)
+            startActivity(intent)
+        }
 //
 
 

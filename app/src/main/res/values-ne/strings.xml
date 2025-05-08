@@ -3,5 +3,8 @@
     <string name="greeting">नमस्ते</string>
     <string name="navigation_drawer_open">Open drawer</string>
     <string name="navigation_drawer_close">Close drawer</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="msg">तपाईंसँग ३ वटा नयाँ सूचनाहरू र २ वटा विचाराधीन कार्यहरू छन्।</string>
 
 </resources>
