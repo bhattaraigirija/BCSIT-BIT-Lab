@@ -29,7 +29,8 @@ class ProductsActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.setTitle("Products")
 
-        recyclerView = findViewById(R.id.recyclerView)
+
+        recyclerView = findViewById(R.id.productsView)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         RetrofitClient.instance.getProducts().enqueue(object : Callback<List<Product>> {
@@ -47,9 +48,4 @@ class ProductsActivity : AppCompatActivity() {
         })
     }
 
-    // Handle back button click
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressedDispatcher.onBackPressed()
-        return true
-    }
 }

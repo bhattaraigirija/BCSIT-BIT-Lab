@@ -12,7 +12,13 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import com.bit.mobileprogramming.model.Product
+import com.bit.mobileprogramming.model.Rating
 import com.bit.mobileprogramming.navBarItem.ProfileFragment
+import com.bit.mobileprogramming.network.RetrofitClient
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.util.Locale
 
 class HomeFragment : Fragment() {
@@ -31,6 +37,7 @@ class HomeFragment : Fragment() {
         val btnDialoge = view.findViewById<Button>(R.id.btnDialoge)
         val btnNepali = view.findViewById<Button>(R.id.btnNep)
         val btnEnglish = view.findViewById<Button>(R.id.btnEng)
+        val btnPost = view.findViewById<Button>(R.id.btnPost)
 
         btnDialoge.setOnClickListener{
 
@@ -95,6 +102,9 @@ class HomeFragment : Fragment() {
             transaction?.commit()
         }
 
+        btnPost.setOnClickListener {
+            postStaticProduct()
+        }
 
         lrProduct.setOnClickListener{
            val intent = Intent(requireContext(), ProductsActivity::class.java)
@@ -131,5 +141,31 @@ class HomeFragment : Fragment() {
         return sharedPref.getString("app_lang", "en") ?: "en"
     }
 
+    private fun postStaticProduct() {
 
+        val sampleProduct = Product(
+            id = 21, // ID might be ignored on server side
+            title = "Static Product",
+            price = 99.99,
+            description = "This is a sample static product.",
+            category = "electronics",
+            image = "https://i.pravatar.cc",
+            rating = Rating(rate = 4.5, count = 200)
+        )
+
+        val call = RetrofitClient.instance.postProduct(sampleProduct)
+        call.enqueue(object : Callback<Product> {
+            override fun onResponse(call: Call<Product>, response: Response<Product>) {
+                if (response.isSuccessful) {
+                    Toast.makeText(requireContext(), "Product posted successfully", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(requireContext(), "Failed: ${response.code()}", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onFailure(call: Call<Product>, t: Throwable) {
+                Toast.makeText(requireContext(), "Error: ${t.localizedMessage}", Toast.LENGTH_LONG).show()
+            }
+        })
+    }
 }

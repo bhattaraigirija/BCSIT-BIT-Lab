@@ -20,6 +20,8 @@ class FormActivity : AppCompatActivity() {
         setContentView(R.layout.activity_form)
 
         val etName = findViewById<EditText>(R.id.etName)
+
+         etName.setText("hello")
         val etEmail = findViewById<EditText>(R.id.etEmail)
         val radioGroupGender = findViewById<RadioGroup>(R.id.radioGroupGender)
         val spinnerCountry = findViewById<Spinner>(R.id.spinnerCountry)
@@ -48,6 +50,7 @@ class FormActivity : AppCompatActivity() {
              val gender = findViewById<RadioButton>(genderId)?.text.toString()
              val country = spinnerCountry.selectedItem.toString()
              val acceptedTerms = checkboxTerms.isChecked
+
 
              val success = db.insertUser(name, email, gender, country, acceptedTerms)
 

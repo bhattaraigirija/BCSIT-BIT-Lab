@@ -34,19 +34,19 @@ class PersonAdapter(
         holder.phoneText.text =  person.phone
         holder.websiteText.text = person.website
 
-//        holder.itemView.setOnClickListener {
-//            val shareText = "Name: ${person.name}\nAddress: ${person.address}"
-//            val intent = Intent(Intent.ACTION_SEND)
-//            intent.type = "text/plain"
-//            intent.putExtra(Intent.EXTRA_TEXT, shareText)
-//            context.startActivity(Intent.createChooser(intent, "Share via"))
-//        }
-
         holder.itemView.setOnClickListener {
-            val intent = Intent(Intent.ACTION_DIAL)
-            intent.data = Uri.parse("tel:${person.phone}")
-            context.startActivity(intent)
+            val shareText = "Name: ${person.name}\nAddress: ${person.address}"
+            val intent = Intent(Intent.ACTION_SEND)
+            intent.type = "text/plain"
+            intent.putExtra(Intent.EXTRA_TEXT, shareText)
+            context.startActivity(Intent.createChooser(intent, "Share via"))
         }
+
+//        holder.itemView.setOnClickListener {
+//            val intent = Intent(Intent.ACTION_DIAL)
+//            intent.data = Uri.parse("tel:${person.phone}")
+//            context.startActivity(intent)
+//        }
 
 //        holder.itemView.setOnClickListener {
 //            val intent = Intent(Intent.ACTION_VIEW)

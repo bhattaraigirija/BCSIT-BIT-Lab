@@ -185,6 +185,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="24sp"
                 android:text="Nepali"
+                android:visibility="gone"
                 android:id="@+id/btnNep"/>
 
 
@@ -193,7 +194,20 @@
                 android:layout_height="wrap_content"
                 android:textSize="24sp"
                 android:text="English"
+                android:visibility="gone"
                 android:id="@+id/btnEng"/>
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:text="Make POST"
+                android:visibility="gone"
+                android:id="@+id/btnPost"/>
+
+
+
 
         </LinearLayout>
 
