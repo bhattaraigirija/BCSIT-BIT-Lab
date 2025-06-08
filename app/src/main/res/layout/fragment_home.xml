@@ -171,7 +171,12 @@
                         android:textColor="#212121"
                         android:layout_marginTop="8dp" />
                 </LinearLayout>
+
             </GridLayout>
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -179,6 +184,8 @@
                 android:text="Dialoge"
                 android:visibility="gone"
                 android:id="@+id/btnDialoge"/>
+
+
 
             <Button
                 android:layout_width="match_parent"
