@@ -16,6 +16,13 @@
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:titleTextColor="@android:color/white" />
 
+    <Button
+        android:id="@+id/makePost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Make Post"
+        android:layout_margin="12dp"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/productsView"
         android:layout_width="match_parent"
