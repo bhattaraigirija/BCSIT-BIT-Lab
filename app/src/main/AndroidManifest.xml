@@ -23,8 +23,12 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyD-FAKE-DEMO-KEY-DO-NOT-USE-IN-PROD" />
 
+        <service
+            android:name="com.example.myapp.MyService"
+            android:exported="false" />
+
         <activity
-            android:name=".SplashActivity"
+            android:name=".LocationAndImagePicker"
             android:exported="false" />
         <activity
             android:name=".ProductsActivity"
@@ -39,7 +43,7 @@
             android:name=".TasksActivity"
             android:exported="false" />
         <activity
-            android:name=".LocationAndImagePicker"
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

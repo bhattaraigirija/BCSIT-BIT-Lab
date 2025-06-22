@@ -16,6 +16,7 @@ import com.bit.mobileprogramming.model.Product
 import com.bit.mobileprogramming.model.Rating
 import com.bit.mobileprogramming.navBarItem.ProfileFragment
 import com.bit.mobileprogramming.network.RetrofitClient
+import com.example.myapp.MyService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -38,6 +39,9 @@ class HomeFragment : Fragment() {
         val btnNepali = view.findViewById<Button>(R.id.btnNep)
         val btnEnglish = view.findViewById<Button>(R.id.btnEng)
         val btnPost = view.findViewById<Button>(R.id.btnPost)
+
+        val intent = Intent(requireContext(), MyService::class.java)
+        requireActivity().startService(intent)
 
         btnDialoge.setOnClickListener{
 
@@ -103,7 +107,11 @@ class HomeFragment : Fragment() {
         }
 
         btnPost.setOnClickListener {
-            postStaticProduct()
+//            postStaticProduct()
+            val intent = Intent(requireContext(), MyService::class.java)
+            requireContext().stopService(intent)
+            startBackgroundTask()
+
         }
 
         lrProduct.setOnClickListener{
@@ -139,6 +147,18 @@ class HomeFragment : Fragment() {
     private fun getSavedLanguage(): String {
         val sharedPref = requireActivity().getSharedPreferences("AppSettings", Context.MODE_PRIVATE)
         return sharedPref.getString("app_lang", "en") ?: "en"
+    }
+
+    private fun startBackgroundTask() {
+        val thread = Thread {
+            Thread.sleep(7000)
+
+            requireActivity().runOnUiThread {
+                //code
+                Toast.makeText(requireContext(), "Task Complete", Toast.LENGTH_SHORT).show()
+            }
+        }
+        thread.start()
     }
 
     private fun postStaticProduct() {
